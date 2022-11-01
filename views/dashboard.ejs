@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Card Effect</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <% foundResult.forEach(function(items){ %>
+
+    <div class="card">
+      <div class="face face1">
+        <div class="content">
+          <i class="fa-sharp fa-solid fa-circle-info"></i>
+          <h3>
+            <%= items.name %>
+          </h3>
+
+
+
+          <% if((items.rating / 20)>=0 && (items.rating / 20)<1 ){ %>
+              <h3></h3>
+            <% }else if((items.rating / 20)>=1 && (items.rating / 20)<2){ %>
+              <h3>⭐</h3>
+            <% }else if((items.rating / 20)>=2 && (items.rating / 20)<3){ %>
+              <h3>⭐⭐</h3>
+            <% }else if((items.rating / 20)>=3 && (items.rating / 20)<4){ %>
+              <h3>⭐⭐⭐</h3>
+            <% }else if((items.rating / 20)>=4 && (items.rating / 20)<5){ %>
+              <h3>⭐⭐⭐⭐</h3>
+            <% }else if((items.rating / 20)==5){ %>
+              <h3>⭐⭐⭐⭐⭐</h3>
+            <% }; %>
+
+
+
+        </div>
+      </div>
+      <div class="face face2">
+        <div class="content">
+          <p>
+            <%= items.feedback %>
+          </p>
+          <a href="#" type="button">Read More</a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+
+  </div>
+
+  <script src="https://kit.fontawesome.com/5558836870.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
